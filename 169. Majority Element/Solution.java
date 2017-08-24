@@ -4,16 +4,14 @@ class Solution {
         int count = 1;
         for (int i = 1; i<nums.length; i++){
             int cur = nums[i];
-            if (count==0){
+            if (candidate == cur){
+                count++;
+            }else if (count == 0){
                 candidate = cur;
                 count = 1;
             }else{
-                if (candidate == cur){
-                    count++;
-                }else{
-                    count--;
-                }
-            }
+                count--;
+            }  
         }
         return candidate;
     }
